@@ -2,6 +2,17 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+Subscription User Admin Dashboard with Next.js
+
+This open-source project aims to simplify user management and subscription tracking. Built using Next.js, it provides an intuitive admin dashboard for managing user accounts, subscription plans, and analytics. Whether you’re a developer, product manager, or business owner, our dashboard streamlines user-related tasks, allowing you to focus on what matters most.
+
+Key Features:
+
+User Management: Add, edit, and deactivate user accounts effortlessly.
+Subscription Tracking: Monitor subscription plans, renewal dates, and payment history.
+Analytics Dashboard: Visualize user engagement, conversion rates, and churn metrics.
+Responsive Design: Works seamlessly across devices, ensuring a smooth user experience.
+
 First, run the development server:
 
 ```bash
