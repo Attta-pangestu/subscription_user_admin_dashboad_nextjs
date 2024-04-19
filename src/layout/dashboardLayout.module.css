@@ -1,0 +1,21 @@
+.container{
+    display: flex;
+    
+}
+
+.menu{
+    flex: 1;
+    height: 100vh;
+    padding: 20px;
+    background: var(--bg-soft);
+}
+
+.content{
+    flex: 4;
+    padding: 20px;
+}
+
+
+
+
+

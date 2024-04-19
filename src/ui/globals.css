@@ -1,0 +1,29 @@
+:root{
+    --bg: #151c2c; 
+    --bg-soft: #182237; 
+    --text: white; 
+    --text-dark: rgb(56, 56, 56); 
+    --textSoft: #b7bac1; 
+    --border: #41B06E;
+    --bg-transparent:  rgba(255, 255, 255, 0.183);
+}
+
+*{
+    list-style-type: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+a{
+    color: inherit;
+}
+
+
