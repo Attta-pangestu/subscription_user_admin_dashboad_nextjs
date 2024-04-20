@@ -1,0 +1,47 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.6rem;
+    background-color: var(--bg-soft);
+    border-radius: 1rem;
+}
+
+
+/* Page Title */
+
+.pageTitle{
+    font-size: 1rem;
+    font: bold;
+    color: var(--text-soft);
+    text-decoration: underline;
+}
+
+/* Page Title */
+
+
+/* Menu */
+.menu{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    
+}
+
+.searchBar{
+    display: flex;
+    gap: 5px;
+    padding: .5rem .8rem; 
+    border-radius: .3rem;
+    background-color: var(--bg-soft-soft);
+    color: var(--text)
+}
+
+.searchBar:hover{
+    outline: 1px solid var(--border);
+}
+
+
+/* Menu */
+
+
