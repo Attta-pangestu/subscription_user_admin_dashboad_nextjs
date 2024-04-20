@@ -2,7 +2,7 @@ import React from 'react'
 import style from './sideBar.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
-import { MdDashboard, MdMonetizationOn, MdPeople, MdShoppingCart } from 'react-icons/md'
+import { MdAnalytics, MdAttachMoney, MdDashboard, MdHelpCenter, MdLogout, MdMonetizationOn, MdOutlineSettings, MdPeople, MdShoppingCart } from 'react-icons/md'
 
 
 // component
@@ -30,7 +30,7 @@ const MenuItem = ({path, title, icon} : {path: string, title: string, icon: Reac
 const SideBar = () => {
   const menuItems = [
     {
-      title: 'pages', 
+      title: 'Pages', 
       menuList: [
         {
           title: 'Dashboard',
@@ -53,20 +53,76 @@ const SideBar = () => {
           icon: <MdMonetizationOn />
         }
       ]
+    }, 
+    {
+      title : 'Analytics', 
+      menuList: [
+        {
+          title: "Reports",
+          path: "/dashboard/reports",
+          icon: <MdAnalytics />,
+        },
+        {
+          title: "Revenue",
+          path: "/dashboard/revenue",
+          icon: <MdAttachMoney />,
+        },
+        {
+          title: "Teams",
+          path: "/dashboard/teams",
+          icon: <MdPeople />,
+        }
+      ]
+    }, 
+    {
+      title: 'User', 
+      menuList: [
+        {
+          title: 'Settings', 
+          path: '/dashboard/settings',
+          icon: <MdOutlineSettings/>
+        }, 
+        {
+          title: 'Help', 
+          path: '/dashboard/help',
+          icon: <MdHelpCenter/>
+        }
+        
+      ]
     }
+
   ]
   
 
   return (
     <div>
-     <UserProfile />
-      <ul>
-        <li>
-          
-        </li>
-      </ul>
+      <UserProfile />
+      {menuItems.map((menu) => (
+        <div key={menu.title}>
+          <hr className={style.menuDivider} />
+          <span className={style.menuTitle}>{menu.title}</span>
+          <ul>
+            {menu.menuList?.map((icon) => (
+              <li key={icon.title}>
+                <MenuItem path={icon.path} title={icon.title} icon={icon.icon} />
+              </li>
+            ))}
+          </ul>
+         
+        </div>
+      ))}
+       <form action={async() => {
+            'use server';
+            console.log('logout')
+          }}>
+            <button className={style.logout}>
+              <MdLogout /> Logout
+            </button>
+          </form>
     </div>
-  )
+
+  );
+  
 }
 
 export default SideBar

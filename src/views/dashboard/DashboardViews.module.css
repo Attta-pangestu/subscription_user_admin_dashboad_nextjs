@@ -1,0 +1,15 @@
+.container{
+    display: flex;
+    gap: 1.5rem;
+
+}
+
+.mainDashboard{
+    flex: 3;
+    border: 2px solid white;
+}
+
+.rightBar{
+    flex: 1;
+    border: 2px solid white;
+}

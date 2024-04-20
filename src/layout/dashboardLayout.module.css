@@ -5,7 +5,7 @@
 
 .menu{
     flex: 1;
-    height: 100vh;
+    min-height: 100vh;
     padding: 20px;
     background: var(--bg-soft);
 }
