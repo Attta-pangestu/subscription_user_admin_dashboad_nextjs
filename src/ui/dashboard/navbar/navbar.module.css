@@ -45,3 +45,23 @@
 /* Menu */
 
 
+/* Icon and Badge */
+.notificationIcon{
+    position: relative;
+}
+
+.notificationBadge{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -10px;
+    right: -10px;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+}
+/* Icon and Badge */
+

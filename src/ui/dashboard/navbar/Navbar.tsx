@@ -11,6 +11,15 @@ const PathTitle = () => {
   );
 }
 
+
+const NotificationBadge = ({count} : {count: number}) => {
+  return (
+    count > 0 && (
+        <span className={style.notificationBadge}>{count}</span>
+    )
+  )
+}
+
 const Navbar = () => {
   return (
     <div className={style.container}>
@@ -21,9 +30,18 @@ const Navbar = () => {
           <MdSearch />
           <input type="text" placeholder="Search" />
         </div>
-          <MdOutlineChat/>
-          <MdNotifications/>
-          <MdPublic/>
+          <div className={style.notificationIcon}>
+            <MdOutlineChat/>
+            <NotificationBadge count={3}/>
+          </div>
+          <div className={style.notificationIcon}>
+            <MdNotifications/>
+            <NotificationBadge count={5}/>
+          </div>
+          <div className={style.notificationIcon}>
+            <MdPublic/>
+            <NotificationBadge count={0}/>
+          </div>
       </div>
     </div>
   )
