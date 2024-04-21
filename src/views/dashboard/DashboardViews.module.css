@@ -6,7 +6,6 @@
 
 .mainDashboard{
     flex: 3;
-    border: 2px solid white;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -57,9 +56,65 @@
 }
 /* TransactionContent */
 
+/* TransactionTable */
+.transactionTable{
+    background-color: var(--bg-soft);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.transactionTable > h2{
+    color: var(--text-soft);
+    font-size: 1.5rem;
+}
+
+.transactionTable table{
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.transactionTable thead{
+    font-weight: bold;
+}
+
+.transactionTable table td{
+    padding: 1rem;
+}
+
+.transactionTable table tr:nth-child(even){
+    background-color: var(--bg-soft-soft);
+}
+
+
+
+.transactionTable .status{
+    padding: .2rem .6rem;
+    border-radius: 5px;
+    font-size: small;
+    font-weight: bold;
+}
+
+.status.success{
+    background-color: green;
+}
+
+.status.failed{
+    background-color: red;
+}
+.status.processing{
+    background-color: orange;
+}
+
+
+
+
+
+
+/* TransactionTable */
+
 /* Card */
 .cardComp{
-    
     padding: 1rem;
     border-radius: 1rem;
     background-color: var(--bg-soft);
