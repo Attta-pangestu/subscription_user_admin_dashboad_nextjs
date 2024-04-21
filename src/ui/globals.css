@@ -6,8 +6,10 @@
     --text-dark: rgb(56, 56, 56); 
     --text-soft: #b7bac1; 
     --btn: #5d57c9;
+    --card:  #2e374a; 
     --border: #41B06E;
     --bg-transparent:  rgba(255, 255, 255, 0.183);
+
 }
 
 *{

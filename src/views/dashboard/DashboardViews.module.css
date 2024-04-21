@@ -7,8 +7,64 @@
 .mainDashboard{
     flex: 3;
     border: 2px solid white;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
 }
 
 .rightBar{
     flex: 1;
 }
+
+/* Transaction Section */
+.transactionSection{
+    display: flex;
+    gap: 1rem; 
+    justify-content: space-around;
+    padding:1rem; 
+    
+    
+}
+/* Transaction Section */
+
+/* TransactionCard */
+.transactionCard{
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 1rem;
+}
+/* TransactionCard */
+
+/* TransactionContent */
+.transactionContent{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    
+}
+
+
+
+.transactionContent >  span{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.transactionContent p span {
+    color: green 
+}
+/* TransactionContent */
+
+/* Card */
+.cardComp{
+    
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: var(--bg-soft);
+    box-shadow: 0px 2px 4px rgba(247, 231, 231, 0.1);
+    
+}
+
+/* Card */
