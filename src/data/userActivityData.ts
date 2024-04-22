@@ -1,4 +1,4 @@
-export const data = [
+export const userActivitydata = [
     {
       name: "Sun",
       visit: 4000,
