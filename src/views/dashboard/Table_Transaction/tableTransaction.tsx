@@ -2,6 +2,7 @@ import React from 'react';
 import style from './tableTransaction.module.css'
 import { latestTransactionData } from '../../../data/transactionData';
 import Image from 'next/image';
+import Table from '../../../components/table/Table';
 
 const TableTransactionSection = () => {
     const statusStyledClass = (status: string) => {
@@ -17,7 +18,7 @@ const TableTransactionSection = () => {
     return (
       <div className={style.transactionTable}>
           <h2>Latest Transaction</h2>
-          <table>
+          <Table>
             <thead>
               <tr>
                 <td>User</td>
@@ -43,7 +44,7 @@ const TableTransactionSection = () => {
                 </tr>
               ))}
             </tbody>
-          </table>
+          </Table>
       </div>
     )
   }

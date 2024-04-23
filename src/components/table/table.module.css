@@ -1,0 +1,17 @@
+.table{
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.table thead{
+    font-weight: bold;
+}
+
+.table td{
+    padding: 1rem;
+}
+
+.table tr:nth-child(even){
+    background-color: var(--bg-soft-soft);
+}

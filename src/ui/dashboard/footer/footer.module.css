@@ -1,0 +1,17 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.6rem;
+    background-color: var(--bg-soft);
+}
+
+.logo{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-soft);
+}
+
+.copyright{
+    color: var(--text-soft);
+}

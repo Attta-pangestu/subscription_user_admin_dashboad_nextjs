@@ -1,0 +1,33 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.top{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1.6rem;
+    background-color: var(--bg-soft);
+    border-radius: .8rem;
+}
+
+.button{
+    background-color: var(--btn)
+}
+
+
+/*Table Users */
+.action{
+    display: flex;
+    gap: .5rem;
+    
+}
+
+.buttonView{
+    background-color:var(--success) ;
+}
+
+.buttonDelete{
+    background-color: var(--danger);
+}

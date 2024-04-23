@@ -1,6 +1,7 @@
 import React from 'react'
 import style from './navbar.module.css'
 import { MdNotifications, MdOutlineChat, MdPublic, MdSearch } from 'react-icons/md'
+import SearchBar from '@/components/searchBar/SearchBar'
 
 const PathTitle = () => {
   return(
@@ -10,6 +11,7 @@ const PathTitle = () => {
     </div>
   );
 }
+
 
 
 const NotificationBadge = ({count} : {count: number}) => {
@@ -24,12 +26,9 @@ const Navbar = () => {
   return (
     <div className={style.container}>
       <PathTitle/>
-
       <div className={style.menu}>
-        <div className={style.searchBar}>
-          <MdSearch />
-          <input type="text" placeholder="Search" />
-        </div>
+        <SearchBar placeholder="Search anything"/>
+        
           <div className={style.notificationIcon}>
             <MdOutlineChat/>
             <NotificationBadge count={3}/>

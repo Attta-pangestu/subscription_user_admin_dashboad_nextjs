@@ -1,4 +1,7 @@
 :root{
+    --success: #41B06E;
+    --danger: #E74C3C;
+    --warning: #F4D03F;
     --bg: #151c2c; 
     --bg-soft: #182237; 
     --bg-soft-soft: #2f426a; 
