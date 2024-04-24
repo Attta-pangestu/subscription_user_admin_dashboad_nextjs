@@ -1,4 +1,17 @@
-export const productsData = [
+
+type ProductData = {
+  img: string;
+  id: string;
+  title: string;
+  desc: string;
+  price: string;
+  created_at: string;
+  stock: string;
+};
+
+
+
+export const productsData : ProductData[] = [
     {
       img: 'none',
       id: '12345',

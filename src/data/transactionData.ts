@@ -1,5 +1,15 @@
 import { TransactionData } from "@/types/transactionType";
 
+
+type LatestTransaction = {
+  name: string;
+  userImage: string;
+  status: string;
+  date: string;
+  amount: string;
+}
+
+
 export const latestTransactionData : TransactionData[] = [
     {
       name: 'Shayna',

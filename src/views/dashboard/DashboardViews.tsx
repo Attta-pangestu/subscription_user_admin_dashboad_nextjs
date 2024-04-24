@@ -12,7 +12,7 @@ import ChartUser from './Chart_Users/ChartUser';
 const DashboardViews = () => {
   return (
     <DashboardLayout>
-      <div className={style.container}>
+      <div className={`${style.container}`}>
           <div className={style.mainDashboard}>
                 <CardTransactionSection />
                 <TableTransactionSection />

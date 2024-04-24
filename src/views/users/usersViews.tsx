@@ -8,19 +8,15 @@ import Image  from 'next/image';
 import { usersData } from '../../data/userInfoData';
 import Table from '@/components/table/Table';
 import Pagination from '@/components/pagination/Pagination';
+import TopNav from '@/components/top-nav/TopNav';
   
 
 
 const UsersViews = () => {
   return (
     <DashboardLayout>
-      <div className={style.container}>
-        <div className={style.top}>
-          <SearchBar placeholder="Search for a user"/>
-          <Link href="/dashboard/users/add">
-            <Button className={style.button}> Add User</Button>
-          </Link>
-        </div>
+      <div className='container'>
+        <TopNav placeholder="Search for a user" path="/dashboard/users" title="Add Users"/>
         <div className={style.tableUsers}>
           <Table>
             <thead>

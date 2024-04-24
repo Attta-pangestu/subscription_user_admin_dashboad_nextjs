@@ -5,9 +5,9 @@ import SearchBar from '@/components/searchBar/SearchBar'
 import Link from 'next/link'
 import Button from '@/components/button/Button'
 import Table from '@/components/table/Table'
-import { usersData } from '@/data/userInfoData'
 import Image  from 'next/image';
 import Pagination from '@/components/pagination/Pagination'
+import { productsData } from '@/data/productsdata'
 
 const ProductsViews = () => {
   return (
@@ -33,14 +33,14 @@ const ProductsViews = () => {
               </tr>
             </thead>
             <tbody>
-              {usersData.map((data, index) => (
+              {productsData.map((data, index) => (
                 <tr key={index}>
-                  <td><Image src="/images/noavatar.png" alt="user" width={35} height={35} style={{borderRadius: '50%'}} /></td>
-                  <td>{data.username}</td>
-                  <td>{data.email}</td>
+                  <td><Image src="/images/noproduct.jpg" alt="user" width={35} height={35} style={{borderRadius: '50%'}} /></td>
+                  <td>{data.title}</td>
+                  <td style={{maxWidth: '200px', overflow: 'hidden', whiteSpace: 'nowrap', textOverflow: 'ellipsis'}}>{data.desc}</td>
+                  <td>{data.price}</td>
                   <td>{data.created_at}</td>
-                  <td>{data.role}</td>
-                  <td>{data.status}</td>
+                  <td>{data.stock}</td>
                   <td className={style.action}>
                     <Link href="/dashboard/users/edit" >
                       <Button className={style.buttonView}>View</Button>

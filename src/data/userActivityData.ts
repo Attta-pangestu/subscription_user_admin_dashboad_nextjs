@@ -1,4 +1,13 @@
-export const userActivitydata = [
+
+
+type UserActivity = {
+  name: string;
+  visit: number;
+  click: number;
+};
+
+
+export const userActivitydata : UserActivity[] = [
     {
       name: "Sun",
       visit: 4000,

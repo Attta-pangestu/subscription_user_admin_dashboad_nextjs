@@ -1,4 +1,16 @@
-export const usersData = [
+
+type UserInfo = {
+  img: string;
+  username: string;
+  id: string;
+  email: string;
+  created_at: string;
+  role: string;
+  status: string;
+};
+
+
+export const usersData : UserInfo[] = [
   
     {
       img: 'none',

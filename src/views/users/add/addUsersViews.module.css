@@ -1,0 +1,16 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    
+}
+
+.form{
+    background-color: var(--bg-soft);
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    border-radius: 1rem;
+    padding: 1rem;
+}
