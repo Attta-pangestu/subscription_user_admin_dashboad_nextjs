@@ -7,8 +7,7 @@ type InputGroupProps = {
 
 const InputGroup: React.FC<InputGroupProps> = ({ data }) => {
   return (
-    <div>
-      {data.map(({ type, placeholder, name, width, required }, index) => (
+      data.map(({ type, placeholder, name, width, required }, index) => (
         <Input
           type={type}
           placeholder={placeholder}
@@ -17,8 +16,8 @@ const InputGroup: React.FC<InputGroupProps> = ({ data }) => {
           required={required}
           key={index}
         />
-      ))}
-    </div>
+      ))
+
   );
 };
 
