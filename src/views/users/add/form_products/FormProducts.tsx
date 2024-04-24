@@ -1,6 +1,6 @@
 import React from 'react'
-import style from './form.module.css'
-const Form = () => {
+import style from './formUsers.module.css'
+const FormProducts = () => {
   return (
     <form action="" className={style.form} >
                 <input type="text" placeholder='Username' name="username" />
@@ -23,4 +23,4 @@ const Form = () => {
   )
 }
 
-export default Form
+export default FormProducts

@@ -1,13 +1,13 @@
 import React from 'react'
 import style from './addUsersViews.module.css'
 import DashboardLayout from '@/layout/Dashboard/DashboardLayout'
-import Form from './form/Form'
+import FormUsers from './form_users/FormUsers'
 
 const AddUsersViews = () => {
   return (
     <DashboardLayout>
         <div className={style.container}>
-            <Form />
+            <FormUsers />
         </div>
     </DashboardLayout>
   )

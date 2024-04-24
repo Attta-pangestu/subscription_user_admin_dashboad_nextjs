@@ -1,0 +1,9 @@
+
+.form{
+    background-color: var(--bg-soft);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    border-radius: 1rem;
+    padding: 1rem;
+}
