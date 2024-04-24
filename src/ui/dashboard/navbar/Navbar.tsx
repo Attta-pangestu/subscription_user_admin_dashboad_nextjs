@@ -1,13 +1,19 @@
+"use client"
 import React from 'react'
 import style from './navbar.module.css'
 import { MdNotifications, MdOutlineChat, MdPublic, MdSearch } from 'react-icons/md'
 import SearchBar from '@/components/searchBar/SearchBar'
-
-const PathTitle = () => {
+import { usePathname } from 'next/navigation'
+import Link from 'next/link'
+const PathTitle = ({pathArray} : {pathArray: string[]}) => {
   return(
     <div>
-       <span className={style.pageTitle}>Dashboard </span> 
-        <span>&gt;</span> 
+      {pathArray.map((path, index) => (
+        <React.Fragment key={index}>
+          <Link href={`/${pathArray.slice(0, index+1).join('/')}`} className={style.pageTitle}> {path} </Link> 
+          {index < pathArray.length - 1 && <span>&gt;</span>} 
+        </React.Fragment>
+      ))}
     </div>
   );
 }
@@ -23,9 +29,13 @@ const NotificationBadge = ({count} : {count: number}) => {
 }
 
 const Navbar = () => {
+  const pathname = usePathname()
+  const pathArray = pathname?.split('/')
+  pathArray?.shift() 
+
   return (
     <div className={style.container}>
-      <PathTitle/>
+      <PathTitle pathArray={pathArray} />
       <div className={style.menu}>
         <SearchBar placeholder="Search anything"/>
         

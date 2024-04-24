@@ -15,6 +15,7 @@
     font: bold;
     color: var(--text-soft);
     text-decoration: underline;
+    cursor: pointer;
 }
 
 /* Page Title */

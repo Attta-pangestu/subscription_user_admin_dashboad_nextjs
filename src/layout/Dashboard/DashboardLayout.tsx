@@ -3,6 +3,8 @@ import SideBar from '@/ui/dashboard/sidebar/SideBar'
 import React from 'react'
 import style from './dashboardLayout.module.css'
 import Footer from '../../ui/dashboard/footer/Footer';
+
+
 const DashboardLayout = ({children} : {children: React.ReactNode}) => {
   return (
     <div className={style.container}>
