@@ -4,12 +4,12 @@ import SearchBar from '../searchBar/SearchBar'
 import Link from 'next/link'
 import Button from '../button/Button'
 
-const TopNav = ({placeholder, path, title} : {placeholder: string, path: string, title: string}) => {
+const TopNav = ({title} : {title: string}) => {
   return (
     <div className={style.top}>
-        <SearchBar placeholder="Search for a user"/>
-        <Link href="/dashboard/users/add">
-        <Button className={style.button}> Add User</Button>
+        <SearchBar placeholder={`Search for a ${title}`}/>
+        <Link href={`/dashboard/${title}/add`}>
+        <Button className={style.button}> Add {title}</Button>
         </Link>
   </div>
   )

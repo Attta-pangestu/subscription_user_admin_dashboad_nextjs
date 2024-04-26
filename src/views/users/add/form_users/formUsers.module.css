@@ -10,19 +10,15 @@
     font-weight: bold;
 }
 
-.form input, 
-.form textarea, 
-.form select{
+
+.form textarea
+{
     padding:.8rem 2.5rem; 
     background-color: var(--bg);
     color: var(--text);
     border: 2px solid var(--outline);
     border-radius: .5rem;
     margin-bottom: 1rem;
-}
-
-.form input, .form select {
-    width: 45%;
 }
 
 .form textarea{

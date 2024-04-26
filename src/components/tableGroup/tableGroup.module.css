@@ -1,0 +1,30 @@
+/*Table Users */
+.action{
+    display: flex;
+    gap: .5rem;
+    
+}
+
+.buttonView{
+    background-color:var(--success) ;
+}
+
+.buttonDelete{
+    background-color: var(--danger);
+}
+
+.status{
+    display: inline-block;; 
+    width: 10px; 
+    height: 10px;
+    border-radius: 50%; 
+    margin-left: .5rem;
+}
+
+
+.cell {
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
+    max-width: 180px; 
+}

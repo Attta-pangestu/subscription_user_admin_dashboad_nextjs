@@ -1,8 +1,8 @@
 
-type UserInfo = {
+export type UserInfo = {
   img: string;
   username: string;
-  id: string;
+  id?: string;
   email: string;
   created_at: string;
   role: string;
@@ -11,24 +11,23 @@ type UserInfo = {
 
 
 export const usersData : UserInfo[] = [
-  
     {
-      img: 'none',
+      img: "/images/noavatar.png",
       username: 'John Doe',
       id: '12345',
       email: 'john@mail.com',
-      created_at: '2022-01-01',
       role: 'admin',
+      created_at: '2022-01-01',
       status: 'active',
     },
     {
-      img: 'none',
+      img: "/images/noavatar.png",
       username: 'Jane Smith',
       id: '67890',
       email: 'jane@mail.com',
-      created_at: '2022-02-15',
       role: 'user',
-      status: 'active',
+      created_at: '2022-02-15',
+      status: 'nonactive',
     },
     // Tambahkan objek lain sesuai kebutuhan
   ];

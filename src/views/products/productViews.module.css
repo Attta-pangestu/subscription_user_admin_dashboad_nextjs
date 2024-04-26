@@ -17,17 +17,3 @@
 }
 
 
-/*Table Users */
-.action{
-    display: flex;
-    gap: .5rem;
-    
-}
-
-.buttonView{
-    background-color:var(--success) ;
-}
-
-.buttonDelete{
-    background-color: var(--danger);
-}

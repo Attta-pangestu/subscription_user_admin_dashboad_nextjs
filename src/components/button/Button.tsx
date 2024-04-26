@@ -2,7 +2,7 @@ import React from 'react'
 import style from './button.module.css'
 const Button = ({children, className} : {children: React.ReactNode, className?: string}) => {
   return (
-    <button className={`${style.button} ${className}`}>
+    <button className={` ${className} ${style.button}`}>
         {children}
     </button>
   )

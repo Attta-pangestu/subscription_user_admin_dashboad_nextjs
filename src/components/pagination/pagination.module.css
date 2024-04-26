@@ -8,8 +8,7 @@
 
 .button{
     background-color: white;
-    color: black;
+    color: black !important ;
     font-size: .8rem;
     font-weight: normal;
-    cursor: pointer;
 }
