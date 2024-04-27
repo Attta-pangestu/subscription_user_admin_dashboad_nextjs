@@ -1,3 +1,5 @@
+"use client"
+
 import { ProductData } from '@/data/productsdata';
 import Image from 'next/image'
 import React from 'react'
@@ -7,23 +9,44 @@ import Select from '@/components/select/Select'
 import Form from '@/components/form/Form'
 
 const ProductDetailViews = ({productsData}: {productsData: ProductData}) => {
+  const [data, setData] = React.useState(productsData);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setData({
+      ...data,
+      [name]: value
+    });
+  }
+
+  const handleChangeSelect = (name: string, value: string) => {
+    setData({
+      ...data,
+      [name]: value
+    });
+  }
+
+  const handleSubmit = () => {
+    console.log(data);
+  }
+
   return (
     <DashboardLayout>
       <div style={{padding: '1rem', display: 'flex', gap: '1rem'}}>
           <div style={{display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center'}}>
-            <Image src={productsData.img === 'none' ? '/images/noproduct.jpg' : productsData.img} alt="user" width={200} height={200} style={{borderRadius: '50%'}} />
-            <h3>{productsData.title}</h3>
+            <Image src={data.img === 'none' ? '/images/noproduct.jpg' : data.img} alt="user" width={200} height={200} style={{borderRadius: '50%'}} />
+            <h3>{data.title}</h3>
           </div>
-          <Form action="" styles={{display: 'flex', flexWrap: 'wrap',  justifyContent: 'space-between'}}>
+          <Form action="" onSubmit={handleSubmit}  styles={{display: 'flex', flexWrap: 'wrap',  justifyContent: 'space-between'}}>
             <InputGroup
-              data={
-                [
+              handleChange={handleChange}
+              data={[
                 {
                   type: 'hidden',
                   placeholder: '',
                   name: 'id',
                   required: false,
-                  value: productsData.id,
+                  value: data.id,
                   width: '45%'
                 },
                 {
@@ -31,7 +54,7 @@ const ProductDetailViews = ({productsData}: {productsData: ProductData}) => {
                   placeholder: 'Title',
                   name: 'title',
                   required: true,
-                  value: productsData.title,
+                  value: data.title,
                   width: '45%'
                 },
                 {
@@ -39,7 +62,7 @@ const ProductDetailViews = ({productsData}: {productsData: ProductData}) => {
                   placeholder: 'Price',
                   name: 'price',
                   required: true,
-                  value: productsData.price,
+                  value: data.price,
                   width: '45%'
                 },
                 {
@@ -47,7 +70,7 @@ const ProductDetailViews = ({productsData}: {productsData: ProductData}) => {
                   placeholder: 'Color',
                   name: 'color',
                   required: false,
-                  value: productsData.color,
+                  value: data.color,
                   width: '45%'
                 },
                 {
@@ -55,7 +78,7 @@ const ProductDetailViews = ({productsData}: {productsData: ProductData}) => {
                   placeholder: 'Created At',
                   name: 'created_at',
                   required: false,
-                  value: productsData.created_at,
+                  value: data.created_at,
                   width: '45%'
                 },
                 {
@@ -63,26 +86,24 @@ const ProductDetailViews = ({productsData}: {productsData: ProductData}) => {
                   placeholder: 'Stock',
                   name: 'stock',
                   required: true,
-                  value: productsData.stock,
+                  value: data.stock,
                   width: '45%'
                 },
-                ]
-              }
+              ]}
             />
-            
-            
             <Select 
               name="status" 
               id="status" 
               width={'45%'} 
-              value={productsData.status.toString()}
+              value={data.status.toString()}
               options={[
                   {value: "nonactive", label: "Not Active"},
                   {value: "active", label: "Active"},
               ]} 
+              onChange={(e) => handleChangeSelect(e.target.name, e.target.value)}
             /> 
-            <textarea name="description" id="description" rows={16} placeholder='Product Description' defaultValue={productsData.desc}></textarea>
-            <button type="submit"  >Edit</button>
+            <textarea name="description" id="description" rows={16} placeholder='Product Description' defaultValue={data.desc}></textarea>
+            <button type="submit" >Edit</button>
           </Form>
       </div>
     </DashboardLayout>
@@ -90,4 +111,3 @@ const ProductDetailViews = ({productsData}: {productsData: ProductData}) => {
 }
 
 export default ProductDetailViews
-
