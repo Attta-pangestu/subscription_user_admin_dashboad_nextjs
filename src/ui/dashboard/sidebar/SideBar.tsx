@@ -111,9 +111,7 @@ const SideBar = () => {
          
         </div>
       ))}
-       <form action={async() => {
-            console.log('logout')
-          }}>
+       <form action="">
             <button className={style.logout}>
               <MdLogout /> Logout
             </button>

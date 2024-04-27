@@ -7,14 +7,19 @@ type SelectProps = {
   options: {value: string, label: string}[]
   value?: string,
   width?: string,
-  onChange?: (event: React.ChangeEvent<HTMLSelectElement>) => void,
+  onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void
 }
 
-const Select = ({name, id, options, value, width,  onChange}: SelectProps) => {
+const Select = ({name, id, options, value, width, onChange}: SelectProps) => {
+  
+  
+  
+  
+
   return (
-    <select  name={name} id={id}  onChange={onChange} style={{width: width}} className={style.select}>
+    <select  name={name} id={id}  style={{width: width}} value={value} onChange={onChange} className={style.select}>
       {options.map((option) => (
-        <option key={option.value} value={option.value} selected={value === option.value} >{option.label}</option>
+        <option  key={option.value} value={option.value}  >{option.label}</option>
       ))}
     </select>
   )

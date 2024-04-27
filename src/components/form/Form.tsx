@@ -11,7 +11,7 @@ type FormProps = {
 
 const Form = ({children, action,onSubmit, styles,  className}: FormProps) => {
   return (
-    <form action={action} onSubmit={onSubmit}   style={styles} className={`${style.form} ${className}`} >
+    <form action='' onSubmit={onSubmit}   style={styles} className={`${style.form} ${className}`} >
         {children}
     </form>
   )
