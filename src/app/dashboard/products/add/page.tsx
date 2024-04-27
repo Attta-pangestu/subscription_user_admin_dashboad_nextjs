@@ -1,9 +1,9 @@
-import AddUsersViews from '@/views/users/add/AddUsersViews'
+import AddProductViews from '@/views/products/add/AddProductViews'
 import React from 'react'
 const page = () => {
   return (
     <div>
-      <AddUsersViews />
+      <AddProductViews />
     </div>
   )
 }

@@ -11,6 +11,7 @@ export const transformData = (dataArray: UserInfo[] | ProductData[], type: 'user
                 item.created_at,
                 item.role,
                 item.status,
+                item.id
             ]);
         case 'product':
             return (dataArray as ProductData[]).map((item: ProductData) => [
@@ -21,9 +22,9 @@ export const transformData = (dataArray: UserInfo[] | ProductData[], type: 'user
                 item.created_at,
                 item.stock.toString(),
                 item.status,
+                item.id,
             ]);
         default:
             return [];
     }
 }
-

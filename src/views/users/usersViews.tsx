@@ -5,13 +5,12 @@ import { UserInfo, usersData } from '../../data/userInfoData';
 import Pagination from '@/components/pagination/Pagination';
 import TopNav from '@/components/top-nav/TopNav';
 import TableGroup from '@/components/tableGroup/TableGroup';
-import { transformData } from '../../service/dataManipulation';
+import { transformData } from '@/service/dataManipulation';
   
 
 
 const UsersViews = () => {
   const users : Array<Array<string>> = transformData(usersData, 'user');
-  
   return (
     <DashboardLayout>
       <div className='container'>
@@ -20,6 +19,7 @@ const UsersViews = () => {
           <TableGroup
             thead={['', 'Name',  'Email', 'Role', 'Created at', 'status',  'Action']}
             data={users}
+            tableName='users'
           />
           <Pagination />
         </div>

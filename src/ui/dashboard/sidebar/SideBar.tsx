@@ -112,7 +112,6 @@ const SideBar = () => {
         </div>
       ))}
        <form action={async() => {
-            'use server';
             console.log('logout')
           }}>
             <button className={style.logout}>

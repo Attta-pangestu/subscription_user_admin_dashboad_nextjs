@@ -1,11 +1,6 @@
 import React from 'react'
 import DashboardLayout from '@/layout/Dashboard/DashboardLayout'
 import style from './productViews.module.css'
-import SearchBar from '@/components/searchBar/SearchBar'
-import Link from 'next/link'
-import Button from '@/components/button/Button'
-import Table from '@/components/table/Table'
-import Image  from 'next/image';
 import Pagination from '@/components/pagination/Pagination'
 import { productsData } from '@/data/productsdata'
 import TopNav  from '@/components/top-nav/TopNav';
@@ -22,6 +17,7 @@ const ProductsViews = () => {
           <TableGroup
             thead={['', 'Title', 'Description', 'Price', 'Created at', 'Stock', 'Action']}
             data={products}
+            tableName='products'
           />
           
           <Pagination />

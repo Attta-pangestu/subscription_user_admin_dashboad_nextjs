@@ -8,9 +8,11 @@ import Button from "../button/Button"
 type TableGroupProps = {
   thead: string[],
   data: string[][],
+  tableName: string, 
 }
 
-const TableGroup = ({ data, thead }: TableGroupProps) => {
+const TableGroup = ({ data, thead, tableName }: TableGroupProps) => {
+  
   return (
     <Table>
       <thead>
@@ -24,8 +26,9 @@ const TableGroup = ({ data, thead }: TableGroupProps) => {
         {data.map((row, index) => (
           <tr key={index} >
             <td><Image src={row[0]} alt="user" width={35} height={35} style={{borderRadius: '50%'}} /></td>
-            {row.slice(1).map((cell, cellIndex) => (
-              cellIndex === row.slice(1).length - 1 ?  
+            {row.slice(1, -1).map((cell, cellIndex) => (
+            
+              row.slice(-2)[0] === cell ? 
                 <td key={`${index}-${cellIndex+1}`}>
                   {cell} 
                   <span className={style.status} style={{
@@ -36,7 +39,7 @@ const TableGroup = ({ data, thead }: TableGroupProps) => {
                 <td key={`${index}-${cellIndex+1}`} className={style.cell}>{cell}</td>
             ))}
             <td className={style.action}>
-              <Link href="/dashboard/users/edit" >
+              <Link href={`/dashboard/${tableName}/${row.at(-1)}`} >
                 <Button className={style.buttonView}>View</Button>
               </Link>
               <form action="">

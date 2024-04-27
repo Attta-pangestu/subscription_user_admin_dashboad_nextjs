@@ -1,20 +1,31 @@
 import React, { ChangeEvent } from 'react';
-import Input from '../input/Input';
 
 type InputGroupProps = {
-  data: { type: string, placeholder: string, name: string, width?: string, required?: boolean }[]
+  data: { type: string, placeholder: string, name: string, width?: string, required?: boolean, value?: string | number }[]
+  handleChange? : (e: ChangeEvent<HTMLInputElement>) => void
 }
 
-const InputGroup: React.FC<InputGroupProps> = ({ data }) => {
+const InputGroup: React.FC<InputGroupProps> = ({ data, handleChange }) => {
+ 
   return (
-      data.map(({ type, placeholder, name, width, required }, index) => (
-        <Input
+      data.map(({ type, placeholder, name, required }, index) => (
+        <input
+          onChange={handleChange}
           type={type}
           placeholder={placeholder}
           name={name}
-          width={width}
           required={required}
+          value={type === 'number' ? Number(data[index].value) : data[index].value}
           key={index}
+          style={{
+            width: data[index].width,
+            padding: '.8rem 2.5rem', 
+            backgroundColor: 'var(--bg)',
+            color: 'var(--text)',
+            border: '2px solid var(--outline)',
+            borderRadius: '.5rem',
+            marginBottom: '1rem'
+          }}
         />
       ))
 

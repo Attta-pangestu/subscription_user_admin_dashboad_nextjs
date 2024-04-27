@@ -8,6 +8,7 @@ export type ProductData = {
   created_at: string;
   stock: string;
   status: 'active' | 'passive' | 'nonactive';
+  color?: string;
 };
 
 
@@ -22,6 +23,7 @@ export const productsData : ProductData[] = [
       created_at: '2022-01-01',
       stock: '72',
       status: 'active',
+      color: 'Merah'
     },
     {
       img: "/images/noproduct.jpg",
@@ -32,6 +34,7 @@ export const productsData : ProductData[] = [
       created_at: '2022-02-15',
       stock: '35',
       status: 'passive',
+      color: 'Biru'
     },
     {
       img: "/images/noproduct.jpg",
@@ -42,6 +45,7 @@ export const productsData : ProductData[] = [
       created_at: '2022-03-10',
       stock: '18',
       status: 'active',
+      color: 'Hijau'
     },
     // Tambahkan objek lain sesuai kebutuhan
   ];
