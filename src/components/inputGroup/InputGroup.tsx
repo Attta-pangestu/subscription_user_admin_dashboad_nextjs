@@ -6,7 +6,7 @@ type InputGroupProps = {
 }
 
 const InputGroup: React.FC<InputGroupProps> = ({ data, handleChange }) => {
- 
+  
   return (
       data.map(({ type, placeholder, name, required }, index) => (
         <input
