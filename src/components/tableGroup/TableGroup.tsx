@@ -3,6 +3,8 @@ import Table from "../table/Table"
 import style from './tableGroup.module.css'
 import Link from "next/link"
 import Button from "../button/Button"
+import { deleteUserById } from "@/service/dbService"
+import { deleteUserAction } from "@/service/formAction"
 
 
 type TableGroupProps = {
@@ -12,7 +14,12 @@ type TableGroupProps = {
 }
 
 const TableGroup = ({ data, thead, tableName }: TableGroupProps) => {
-  
+  const handleDelete = async (id: string | 'undefined' ) => {
+    console.log('Delete User ', id)
+    await deleteUserById(id)
+  }
+
+
   return (
     <Table>
       <thead>
@@ -42,9 +49,9 @@ const TableGroup = ({ data, thead, tableName }: TableGroupProps) => {
               <Link href={`/dashboard/${tableName}/${row.at(-1)}`} >
                 <Button className={style.buttonView}>View</Button>
               </Link>
-              <form action="">
-                  <input type="hidden" name="id" value={index.toString()} />
-                  <Button className={style.buttonDelete}>Delete</Button>
+              <form action={deleteUserAction}>
+                <input type="hidden" name="id" value={row.at(-1) as string} />
+                <Button type="submit"  className={style.buttonDelete}>Delete</Button>
               </form>
             </td>
           </tr>

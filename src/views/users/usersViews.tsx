@@ -22,7 +22,7 @@ const UsersViews = ({usersData} : UserProps) => {
         <TopNav title="users"/>
         <div className={style.tableUsers}>
           <TableGroup
-            thead={['', 'Name',  'Email', 'Role', 'Created at', 'status',  'Action']}
+            thead={['', 'Name',  'Email', 'Created At', 'Role', 'status',  'Action']}
             data={users}
             tableName='users'
           />
