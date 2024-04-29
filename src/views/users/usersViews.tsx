@@ -1,16 +1,21 @@
 import React from 'react'
 import DashboardLayout from '@/layout/Dashboard/DashboardLayout'
 import style from './usersViews.module.css'
-import { UserInfo, usersData } from '../../data/userInfoData';
+import { UserInfo } from '../../data/userInfoData';
 import Pagination from '@/components/pagination/Pagination';
 import TopNav from '@/components/top-nav/TopNav';
 import TableGroup from '@/components/tableGroup/TableGroup';
 import { transformData } from '@/service/dataManipulation';
   
 
+type UserProps = {
+  usersData: UserInfo[]
+}
 
-const UsersViews = () => {
+
+const UsersViews = ({usersData} : UserProps) => {
   const users : Array<Array<string>> = transformData(usersData, 'user');
+  console.log(usersData)
   return (
     <DashboardLayout>
       <div className='container'>

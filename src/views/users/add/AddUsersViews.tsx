@@ -5,37 +5,42 @@ import Form from '@/components/form/Form'
 import Input from '@/components/input/Input'
 import Select from '@/components/select/Select'
 import InputGroup from '@/components/inputGroup/InputGroup'
+import { addUser } from '@/service/formAction'
 
 const AddUsersViews = () => {
+
+
   return (
     <DashboardLayout>
         <div className={style.container}>
-          <Form >
+          <Form action={addUser} >
           <InputGroup data={[
                   {type: "text", placeholder: 'Username', name: "username", width: "45%"},
                   {type: "email", placeholder: 'Email', name: "email", width: "45%"},
-                  {type: "password", placeholder: 'Password', name: "password", width: '45%', required:true},
-                  {type: "phone", placeholder: 'Phone', name:'phone', width: '45%'}
+                  {type: "password", placeholder: 'Password', name: "password", width: '32%', required:true},
+                  {type: "phone", placeholder: 'Phone', name:'phone', width: '32%'}, 
+                  {type: "text", placeholder:'Image URL', name:'img', width: '32%'}
+
                 ]}/>
                 <Select 
-                  name="isAdmin" 
-                  id="isAdmin" 
+                  name="role" 
+                  id="role" 
                   width={'45%'} 
                   options={
                     [
-                      {value: "false", label: "Is Admin?"}, 
-                      {value: "true", label: "Yes"},
-                      {value: "false", label: "No"}
+                      {value: "user", label: "Choose role?"}, 
+                      {value: "admin", label: "Admin"},
+                      {value: "user", label: "User"}
                     ]}  />
                 <Select 
-                  name="isActive" 
-                  id="isActive" 
+                  name="status" 
+                  id="status" 
                   width={'45%'} 
                   options={
                     [
-                      {value: "false", label: "Is Active?"}, 
-                      {value: "true", label: "Yes"},
-                      {value: "false", label: "No"}
+                      {value: "passive", label: "Status ?"}, 
+                      {value: "active", label: "Active"},
+                      {value: "passive", label: "Passive"}
                     ]}  />
                 <textarea name="address" id="address" rows={16} placeholder='Address' ></textarea>
                 <button type='submit'>Submit</button>

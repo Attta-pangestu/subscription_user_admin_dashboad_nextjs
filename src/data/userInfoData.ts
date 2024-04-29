@@ -4,7 +4,7 @@ export type UserInfo = {
   username: string;
   id: string;
   email: string;
-  created_at: string;
+  createdAt: string;
   role: string;
   status: string;
   password?: string; 
@@ -20,7 +20,7 @@ export const usersData : UserInfo[] = [
       id: '12345',
       email: 'john@mail.com',
       role: 'admin',
-      created_at: '2022-01-01',
+      createdAt: '2022-01-01',
       status: 'active',
       password: 'password123',
       phone: '081234567890',
@@ -31,7 +31,7 @@ export const usersData : UserInfo[] = [
       id: '67890',
       email: 'jane@mail.com',
       role: 'user',
-      created_at: '2022-02-15',
+      createdAt: '2022-02-15',
       status: 'nonactive',
       password: 'password456',
       phone: '087654321098',

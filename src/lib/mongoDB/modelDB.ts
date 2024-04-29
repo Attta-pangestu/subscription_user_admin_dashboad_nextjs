@@ -1,5 +1,9 @@
 import mongoose from "mongoose";
 
+
+// mongoose.connect(process.env.MONGODB_URI as string);
+// mongoose.Promise = global.Promise
+
 const userSchema = new mongoose.Schema({
     username: {
         type: String,
@@ -75,7 +79,41 @@ const productSchema = new mongoose.Schema({
     }
 )
 
-export const UserModel = mongoose.model('users', userSchema) || mongoose.models.users
-export const ProductModel = mongoose.model('products', productSchema) || mongoose.models.products
+
+const transactionSchema = new mongoose.Schema({
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'users',
+        required: true,
+    },
+    product: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'products',
+        required: true,
+    },
+    status: {
+        type: String,
+        enum: ['Processing', 'Success', 'Failed'],
+        default: 'Processing',
+    },
+    qty: {
+        type: Number,
+        required: true,
+        min: 0,
+    },
+    total: {
+        type: Number,
+        required: true,
+        min: 0,
+    },
+}, {
+    timestamps: true,
+});
+
+
+
+export const UserModel = mongoose.models.users || mongoose.model('users', userSchema)
+export const ProductModel = mongoose.models.products || mongoose.model('products', productSchema)
+export const TransactionModel = mongoose.models.transactions || mongoose.model('transactions', transactionSchema)
 
 

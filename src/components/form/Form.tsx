@@ -3,7 +3,7 @@ import style from './form.module.css'
 
 type FormProps = {
   children: React.ReactNode, 
-  action?: string, 
+  action?: (formData: FormData) => void, 
   className?: string, 
   styles?: React.CSSProperties, 
   onSubmit?: (event: React.FormEvent<HTMLFormElement>) => void
@@ -11,7 +11,7 @@ type FormProps = {
 
 const Form = ({children, action,onSubmit, styles,  className}: FormProps) => {
   return (
-    <form action='' onSubmit={onSubmit}   style={styles} className={`${style.form} ${className}`} >
+    <form action={action} onSubmit={onSubmit}   style={styles} className={`${style.form} ${className}`} >
         {children}
     </form>
   )

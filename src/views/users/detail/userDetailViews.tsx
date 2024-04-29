@@ -38,7 +38,7 @@ const UserDetailViews = ({usersData} : {usersData: UserInfo}) => {
             <Image src={data.img === 'none' ? '/images/noavatar.png' : data.img} alt="user" width={200} height={200} style={{borderRadius: '50%'}} />
             {data.username}
           </div>
-          <Form action="" onSubmit={handleSubmit}  styles={{display: 'flex', flexWrap: 'wrap',  justifyContent: 'space-between'}}>
+          <Form onSubmit={handleSubmit}  styles={{display: 'flex', flexWrap: 'wrap',  justifyContent: 'space-between'}}>
             <InputGroup
               handleChange={handleChange}
               data={

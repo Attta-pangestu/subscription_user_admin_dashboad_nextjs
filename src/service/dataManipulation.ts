@@ -8,7 +8,7 @@ export const transformData = (dataArray: UserInfo[] | ProductData[], type: 'user
                 item.img, 
                 item.username,
                 item.email,
-                item.created_at,
+                item.createdAt,
                 item.role,
                 item.status,
                 item.id
@@ -27,4 +27,11 @@ export const transformData = (dataArray: UserInfo[] | ProductData[], type: 'user
         default:
             return [];
     }
+}
+
+export const formatedDate = (date : Date): string  => {
+    const dateString = date.toISOString();
+    const [year, month, day] = dateString.slice(0,10).split('-');
+    return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
+
 }
