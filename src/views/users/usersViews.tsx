@@ -15,7 +15,6 @@ type UserProps = {
 
 const UsersViews = ({usersData} : UserProps) => {
   const users : Array<Array<string>> = transformData(usersData, 'user');
-  console.log(usersData)
   return (
     <DashboardLayout>
       <div className='container'>

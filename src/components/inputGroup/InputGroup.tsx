@@ -1,7 +1,7 @@
 import React, { ChangeEvent } from 'react';
 
 type InputGroupProps = {
-  data: { type: string, placeholder: string, name: string, width?: string, required?: boolean, value?: string | number }[]
+  data: { type: string, placeholder?: string | 'undefined', name: string, width?: string, required?: boolean, value?: string | number }[]
   handleChange? : (e: ChangeEvent<HTMLInputElement>) => void
 }
 

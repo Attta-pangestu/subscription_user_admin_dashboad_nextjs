@@ -3,7 +3,7 @@ import { UserModel } from '../lib/mongoDB/modelDB';
 import mongoose from 'mongoose';
 import { formatedDate } from './dataManipulation';
 import { UserInfo } from '@/data/userInfoData';
-
+import { ObjectId } from 'mongodb'
 // mongoose.connect(process.env.MONGODB_URI as string); 
 // mongoose.Promise = global.Promise;
 
@@ -14,7 +14,7 @@ export const fetchUsers = async () => {
         const formatedUser = users.map((user: any) => {
             return {
                 ...user,
-                id: user._id,
+                id: new ObjectId(user._id).toString(),
                 createdAt: formatedDate(user.createdAt)
             }
         })  
@@ -31,7 +31,7 @@ export const fetchUserById = async (id : string) => {
         const user : any = await UserModel.findById(id).lean();
         const formatedUser = {
             ...user,
-            id: user._id,
+            id: new ObjectId(user._id).toString(), 
             createdAt: formatedDate(user.createdAt)
         }
         return formatedUser
@@ -51,7 +51,7 @@ export const deleteUserById = async (id : string) => {
     }
 }
 
-export const updateUserById = async (id : string, data : UserInfo) => {
+export const updateUserById = async (id : string, data : any) => {
     try{
         connectDB();
         await UserModel.findByIdAndUpdate(id, data);

@@ -2,9 +2,9 @@
 export type UserInfo = {
   img: string;
   username: string;
-  id: string;
+  id?: string;
   email: string;
-  createdAt: string;
+  createdAt?: string;
   role: string;
   status: string;
   password?: string; 

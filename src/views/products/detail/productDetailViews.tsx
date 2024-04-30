@@ -26,9 +26,6 @@ const ProductDetailViews = ({productsData}: {productsData: ProductData}) => {
     });
   }
 
-  const handleSubmit = () => {
-    console.log(data);
-  }
 
   return (
     <DashboardLayout>
@@ -37,7 +34,7 @@ const ProductDetailViews = ({productsData}: {productsData: ProductData}) => {
             <Image src={data.img === 'none' ? '/images/noproduct.jpg' : data.img} alt="user" width={200} height={200} style={{borderRadius: '50%'}} />
             <h3>{data.title}</h3>
           </div>
-          <Form action="" onSubmit={handleSubmit}  styles={{display: 'flex', flexWrap: 'wrap',  justifyContent: 'space-between'}}>
+          <Form  styles={{display: 'flex', flexWrap: 'wrap',  justifyContent: 'space-between'}}>
             <InputGroup
               handleChange={handleChange}
               data={[

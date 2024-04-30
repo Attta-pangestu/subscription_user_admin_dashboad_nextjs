@@ -15,7 +15,6 @@ type TableGroupProps = {
 
 const TableGroup = ({ data, thead, tableName }: TableGroupProps) => {
   const handleDelete = async (id: string | 'undefined' ) => {
-    console.log('Delete User ', id)
     await deleteUserById(id)
   }
 
