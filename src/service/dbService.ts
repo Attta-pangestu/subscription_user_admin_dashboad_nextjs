@@ -2,7 +2,6 @@ import { connectDB } from '@/lib/mongoDB/connDB';
 import { UserModel } from '../lib/mongoDB/modelDB';
 import mongoose from 'mongoose';
 import { formatedDate } from './dataManipulation';
-import { UserInfo } from '@/data/userInfoData';
 import { ObjectId } from 'mongodb'
 // mongoose.connect(process.env.MONGODB_URI as string); 
 // mongoose.Promise = global.Promise;
