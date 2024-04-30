@@ -7,11 +7,17 @@ import { ObjectId } from 'mongodb'
 // mongoose.connect(process.env.MONGODB_URI as string); 
 // mongoose.Promise = global.Promise;
 
-export const fetchUsers = async () => {
+export const fetchUsers = async (searchQuery: string, page: number) => {
+    const ITEM_PER_PAGE = 2
+    const regex = new RegExp(searchQuery, 'i')
     try{
         connectDB();
-        const users = await UserModel.find().lean();
-        const formatedUser = users.map((user: any) => {
+        const users = await UserModel.find({username: {$regex: regex}}).lean();
+        const totalItems = users.length
+        const totalPages = Math.ceil(totalItems / ITEM_PER_PAGE)
+        const usersDisplay = users.slice((page - 1) * ITEM_PER_PAGE, page * ITEM_PER_PAGE)
+
+        const formatedUser = usersDisplay.map((user: any) => {
             return {
                 ...user,
                 id: new ObjectId(user._id).toString(),
