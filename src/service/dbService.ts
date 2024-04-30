@@ -2,6 +2,7 @@ import { connectDB } from '@/lib/mongoDB/connDB';
 import { UserModel } from '../lib/mongoDB/modelDB';
 import mongoose from 'mongoose';
 import { formatedDate } from './dataManipulation';
+import { UserInfo } from '@/data/userInfoData';
 
 // mongoose.connect(process.env.MONGODB_URI as string); 
 // mongoose.Promise = global.Promise;
@@ -49,3 +50,14 @@ export const deleteUserById = async (id : string) => {
         throw new Error('error deleting user')
     }
 }
+
+export const updateUserById = async (id : string, data : UserInfo) => {
+    try{
+        connectDB();
+        await UserModel.findByIdAndUpdate(id, data);
+    }catch(err){
+        console.log(err)
+        throw new Error('error updating user')
+    }
+}
+
